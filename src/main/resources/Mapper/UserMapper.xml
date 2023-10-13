@@ -5,12 +5,8 @@
         select * from actor
     </select>
 
-<!--    <select id="findPage" resultType="com.example.springboot.entity.User">-->
-<!--        select * from user-->
-<!--        <where>-->
-<!--            <if test="name != null and name != ''">-->
-<!--                and user.name like concat('%',#{name},'%')-->
-<!--            </if>-->
-<!--        </where>-->
-<!--    </select>-->
+    <insert id="insert2">
+      insert into actor (actor_id, first_name, last_name, last_update)
+           values (#{actorId},#{firstName},#{lastName},#{lastUpdate})
+    </insert>
 </mapper>

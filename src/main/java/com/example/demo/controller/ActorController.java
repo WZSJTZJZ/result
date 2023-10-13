@@ -28,7 +28,12 @@ public class ActorController {
         System.out.println(actorMapper.userlist());
         return actorMapper.userlist();
     }
-    @GetMapping("/delectById/{id}")
+    @GetMapping("/selectById/{id}")
+    public Actor selectBYId(@PathVariable Integer id){
+        Actor rs=actorMapper.selectById(id);
+        return rs;
+    }
+    @GetMapping("/deletById/{id}")
     public String delectById(@PathVariable Integer id){
        Integer result=actorMapper.deleteById(id);
        return result==0?"刪除失败":"刪除成功";
@@ -37,5 +42,10 @@ public class ActorController {
     public String insert(@RequestBody Actor actor){
         Integer result=actorMapper.insert(actor);
         return result==0?"添加失败":"添加成功";
+    }
+    @PostMapping("/insert2")
+    public int insert2(@RequestBody Actor actor){
+        Integer result=actorMapper.insert2(actor);
+        return result;
     }
 }

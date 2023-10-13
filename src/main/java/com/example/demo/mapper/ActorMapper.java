@@ -9,4 +9,6 @@ import java.util.List;
 @Mapper
 public interface ActorMapper extends BaseMapper<Actor> {
     List<Actor> userlist();
+
+    Integer insert2(Actor entity);
 }

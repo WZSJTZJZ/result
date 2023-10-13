@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 @TableName("film")
 public class Film {
-    @TableId(value = "filmId", type = IdType.AUTO)
+    @TableId(value = "film_id", type = IdType.AUTO)
     private Integer filmId;
     private  String title;
     private  String description;
