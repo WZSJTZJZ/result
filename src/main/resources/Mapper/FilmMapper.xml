@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.FilmMapper">
+    <select id="getList" resultType="com.example.demo.entity.Film">
+        select film.film_id,film.title,film.description,film.release_year,film.language_id,film.rental_duration,language.name from film
+        left join language on film.language_id = language.language_id
+    </select>
+
+</mapper>
